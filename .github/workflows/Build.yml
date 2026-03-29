@@ -1,0 +1,36 @@
+name: Multi-Platform Build
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+        include:
+          - os: macos-latest
+            target: ios-macos
+          - os: ubuntu-latest
+            target: linux-android
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo apt-get update && sudo apt-get install -y build-essential libbison-dev libfl-dev
+
+      - name: Compile Cycript
+        run: |
+          if [ "${{ matrix.os }}" == "macos-latest" ]; then
+            make -f ios.mk  # Your iOS/macOS build script
+          else
+            make -f linux.mk # Your Linux/Android build script
+          fi
+
+      - name: Upload Binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: cycript-${{ matrix.os }}
+          path: build/cycript
