@@ -1,0 +1,8 @@
+Package: com.web4application.cycript
+Version: 2.0.0
+Architecture: iphoneos-arm64
+Maintainer: Web4application
+Filename: ./debs/cycript_2.0.0.deb
+Size: 102400
+MD5sum: [your_md5_here]
+Description: Modernized Cycript with ES6+ support.
