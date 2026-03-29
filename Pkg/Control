@@ -1,0 +1,9 @@
+Package: com.web4application.cycript
+Name: Cycript (Modernized)
+Version: 2.0.0
+Architecture: iphoneos-arm64
+Maintainer: Web4application
+Section: Development
+Priority: optional
+Description: Modernized Cycript with ES6+ support and rootless compatibility.
+Depends: libroot (>= 1.0.0), mobilesubstrate
