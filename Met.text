@@ -1,0 +1,12 @@
+Device 0 handle: 0x123456
+  Metric Group: GPU_Thermal
+    Domain: 2
+    Sampling Type: 1
+    Counter Values: [0.0, 0.0, 0.0, 0.0]
+----------------------------------------
+Device 1 handle: 0xabcdef
+  Metric Group: GPU_Utilization
+    Domain: 1
+    Sampling Type: 1
+    Counter Values: [0.0, 0.0, 0.0, 0.0]
+----------------------------------------
