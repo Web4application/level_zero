@@ -15,6 +15,7 @@ def card_3d_demo():
     card = card_3d("Mouseover me", bgurl, amt=1.5, left_align=True)
     return Div(card, style=cardcss
     ```
+```
 ## 🛠 Installation
 
 ### iOS (Sileo/Zebra)
@@ -25,11 +26,14 @@ def card_3d_demo():
 ```bash
 adb push ./libcycript.so /data/local/tmp/
 adb shell chmod +x /data/local/tmp/cycript
+pip install -r requirements.
 ```
 ```bash
 # Inject into a process
 cycript -p [PID]
-
+python main.py
 # Use modern JS
 cy# const app = [UIApp keyWindow];
 cy# await someAsyncLogic();
+npm install -g vercel
+vercel --prod
